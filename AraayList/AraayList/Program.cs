@@ -40,7 +40,9 @@ namespace AraayList
             int pos;
             pos = grades.IndexOf(77);
             grades.RemoveAt(pos); */
-            Console.WriteLine("------------Names ArrayList---------------");
+
+            // ---------------- Names ArrayList ------------
+            /*Console.WriteLine("------------Names ArrayList---------------");
             ArrayList names = new ArrayList();
             names.Add("Mike");
             names.Add("Beate");
@@ -77,7 +79,33 @@ namespace AraayList
             Console.WriteLine("Names from an array: ");
             for (int i = 0; i < arrNames.GetUpperBound(0); i++)
                 Console.WriteLine(arrNames[i]);
-        }   
+            */
+
+            // **** CustomArrayList ****
+
+            CustomArrayList<string> shoppingList = new CustomArrayList<string>();
+            shoppingList.Add("Milk");
+            shoppingList.Add("Honey");
+            shoppingList.Add("Olives");
+            shoppingList.Add("Water");
+            shoppingList.Add("Bear");
+            shoppingList.Remove("Olives");
+            shoppingList.Insert(1, "Fruits");
+            shoppingList.Insert(0, "Cheese");
+            shoppingList.Insert(6, "Vegetables");
+            shoppingList.RemoveAt(0);
+            shoppingList[3] = "A lot of " + shoppingList[3];
+            Console.WriteLine("We need to buy: ");
+            for(int i = 0; i < shoppingList.Count; i++)
+                Console.WriteLine(" - " + shoppingList[i]);
+            Console.WriteLine("Position of 'Bear' = {0}", shoppingList.IndexOf("Bear"));
+            Console.WriteLine("Position of 'Water' = {0}", shoppingList.IndexOf("Water"));
+            Console.WriteLine("Do you have to buy Bread? " + shoppingList.Contains("Bread"));
+
+
+
+
+        }
 
     }
 }
